@@ -1,0 +1,27 @@
+QEMU is packaged by most Linux distributions:
+
+Arch: pacman -S qemu
+
+Debian/Ubuntu:
+For full system emulation: apt-get install qemu-system
+For emulating Linux binaries: apt-get install qemu-user-static
+Fedora: dnf install @virtualization
+
+Gentoo: emerge --ask app-emulation/qemu
+
+RHEL/CentOS: yum install qemu-kvm
+
+SUSE: zypper install qemu
+Note: On most distributions, the above commands will install meta-packages that pull in other packages with emulator binaries for all available targets. Have a look at the package list of your distribution first if you only need a subset of the targets.
+
+Version numbering
+Since version 3.0.0, QEMU uses a time based version numbering scheme:
+
+major
+incremented by 1 for the first release of the year
+minor
+reset to 0 with every major increment, otherwise incremented by 1 for each release from git master
+micro
+always 0 for releases from git master, incremented by 1 for each stable branch release
+The implication of this is that changes in major version number do not have any bearing on the scope of changes included in the release. Non-backward compatible changes may be made in any master branch release, provided they have followed the deprecation policy which calls for warnings to be emitted for a minimum of two releases prior to the change.
+
